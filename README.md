@@ -4,7 +4,8 @@
 采用 Nodejs + Koa + ejs
 
 ## 路由
-/ --> 首页
-/blog --> 博文
-/aboutme --> 关于我
-/comment --> 留言
+* / --> 首页
+* /blog --> 博文
+* /aboutme --> 关于我
+* /comment --> 留言
+* /assets --> 静态资源

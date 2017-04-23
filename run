@@ -1,0 +1,13 @@
+#!/bin/bash
+
+#Enter Directory
+cd "$( dirname "${BASH_SOURCE[0]}" )"
+
+#Kill last
+pkill -9 node
+
+#Set DEBUG
+export DEBUG=*,-babel
+
+#Start this
+nohup npm start > log.txt 2>&1 &

@@ -2,6 +2,7 @@
 <html>
 
 <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>天空之城</title>
   <style>
     body {
@@ -14,13 +15,12 @@
     }
     
     .banner {
-      height: 100px;
-      background-color: gray;
+      height: 300px;
+      background: url(/assets/img/banner.jpg) no-repeat center top;
     }
     
     .main {
       width: 1300px;
-      height: 100%;
       margin: 0 auto;
       margin-top: 20px;
     }
@@ -28,13 +28,13 @@
     .nav {
       float: left;
       width: 300px;
-      height: 100%;
+      min-height: 600px;
     }
     
     .content {
       float: right;
       width: 960px;
-      height: 100%;
+      min-height: 600px;
     }
   </style>
 </head>
@@ -42,7 +42,14 @@
 <body>
   <div class="banner"></div>
   <div class="main">
-    <div class="nav card"></div>
+    <div class="nav card">
+      <ul>
+        <li>首页</li>
+        <li>博文</li>
+        <li>关于我</li>
+        <li>留言</li>
+      </ul>
+    </div>
     <div class="content card"></div>
   </div>
 </body>

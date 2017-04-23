@@ -13,7 +13,10 @@
       "outFiles": [
         "${workspaceRoot}\\dist\\index.js"
       ], //源映射，指定实际执行文件
-      "preLaunchTask": "build" //首先执行build task
+      "preLaunchTask": "build", //首先执行build task
+      "env": {
+        "DEBUG": "*"
+      }
     },
     {
       "type": "node",
