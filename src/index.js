@@ -1,7 +1,7 @@
 import Koa from "koa";
 import Router from "koa-router";
+import serve from "koa-better-serve";
 import ejs from "ejs";
-import fs from "fs";
 
 const app = new Koa();
 const router = new Router();
@@ -12,11 +12,7 @@ router.get("/", (ctx, next) => {
   });
 });
 
-router.get("/assets/img/:name", (ctx, next) => {
-  ctx.type = "image/jpeg";
-  ctx.body = fs.createReadStream(`assets/img/${ctx.params.name}`);
-});
-
+app.use(serve("assets", "/assets/"));
 app.use(router.routes()).use(router.allowedMethods());
 
 app.listen(3000);

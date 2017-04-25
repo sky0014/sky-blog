@@ -5,7 +5,7 @@
 
 ## 路由
 * / --> 首页
-* /blog --> 博文
+* /article --> 博文
 * /aboutme --> 关于我
-* /comment --> 留言
+* /message --> 留言
 * /assets --> 静态资源
