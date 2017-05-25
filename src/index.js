@@ -1,31 +1,17 @@
 import Koa from "koa";
-import Router from "koa-router";
 import serve from "koa-better-serve";
-import ejs from "ejs";
 
-import { toPromise } from './util';
+import setRender from './utils/templateRender';
+import router from './routers';
 
 const app = new Koa();
-const router = new Router();
-const renderFile = toPromise(ejs.renderFile);
 
-async function renderCommonPage(...args) {
-    const content = await renderFile(...args);
-    const html = await renderFile("template/common.html", { content });
-    return html;
-}
+//设置模板渲染方法
+setRender(app);
 
-router.get("/", async(ctx, next) => {
-    const html = await renderCommonPage("template/index.html");
-    ctx.body = html;
-});
-
-router.get("/message", async(ctx, next) => {
-    const html = await renderCommonPage("template/message.html");
-    ctx.body = html;
-});
-
+//静态资源
 app.use(serve("assets", "/assets/"));
+//路由
 app.use(router.routes()).use(router.allowedMethods());
 
 app.listen(3000);

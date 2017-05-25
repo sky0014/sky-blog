@@ -63,7 +63,7 @@ a:hover {
 .nav ul li {
     position: relative;
     padding: 5px 20px;
-    transition: background 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out;
 }
 
 .nav ul li:hover {
@@ -106,19 +106,46 @@ a:hover {
 
 .index-item {
     border-bottom: solid 2px #f9fafb;
+    padding-bottom: 20px;
 }
 
-.index-item .title {
+.index-item-title {
     font-size: 32px;
 }
 
-.index-item .todo li p {
+.index-item-todo li p {
     margin-left: 40px;
 }
 
 
 /*留言内容样式*/
 
-.message .title {
+.message-title {
     font-size: 32px;
+}
+
+.message-item {
+    border-bottom: solid 2px #f9fafb;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.message-item-author {
+    font-weight: bold;
+}
+
+.message-leave-title {
+    font-size: 32px;
+}
+
+.message-leave-content {
+    display: block;
+    width: 90%;
+    height: 160px;
+    margin-top: 10px;
+}
+
+.message-leave-submit {
+    margin-top: 10px;
+    padding: 4px 12px;
 }
