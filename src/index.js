@@ -12,7 +12,7 @@ setRender(app);
 //静态资源
 app.use(serve("assets", "/assets/"));
 //路由
-app.use(router.routes()).use(router.allowedMethods());
+app.use(router.middleware());
 
 app.listen(3000);
 console.log("server start at port 3000...");

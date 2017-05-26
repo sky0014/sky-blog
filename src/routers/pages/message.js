@@ -1,8 +1,8 @@
-import Router from "koa-router";
+import Router from "koa-better-router";
 
-const router = new Router();
+const router = new Router().loadMethods();
 
-router.get("/", async(ctx, next) => {
+router.get("/message", async(ctx, next) => {
     ctx.body = await ctx.render("template/message.html");
 });
 

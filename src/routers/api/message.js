@@ -1,10 +1,11 @@
-import Router from "koa-router";
+import Router from 'koa-better-router';
+import body from 'koa-better-body';
 
 import { Message } from './../../db/mongo';
 
-const router = new Router();
+const router = new Router().loadMethods();
 
-router.get('/', async(ctx, nect) => {
+router.get('/message', async(ctx, next) => {
     try {
         ctx.body = await Message.find().exec();
     } catch (e) {
@@ -12,8 +13,8 @@ router.get('/', async(ctx, nect) => {
     }
 });
 
-router.post('/', async(ctx, nect) => {
-    const { nick, email, content } = ctx.body;
+router.post('/message', body(), async(ctx, next) => {
+    const { nick, email, content } = ctx.request.fields;
     const msg = new Message({ nick, email, content });
     try {
         ctx.body = await msg.save();

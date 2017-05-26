@@ -1,4 +1,4 @@
-import Router from "koa-router";
+import Router from "koa-better-router";
 import home from './pages/home';
 import message from './pages/message';
 import messageApi from './api/message';
@@ -6,10 +6,15 @@ import messageApi from './api/message';
 const router = new Router();
 
 //---------------------------- 页面 ----------------------------------------
-router.use('/', home.routes(), home.allowedMethods());
-router.use('/message', message.routes(), message.allowedMethods());
+const page = new Router();
+page
+    .extend(home)
+    .extend(message);
 
-//api
-router.use('/api/message', messageApi.routes(), messageApi.allowedMethods());
+//---------------------------- API ----------------------------------------
+const api = new Router({ prefix: '/api' });
+api
+    .extend(messageApi);
 
-export default router;
+
+export default router.addRoutes(page.getRoutes(), api.getRoutes());

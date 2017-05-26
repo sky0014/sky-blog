@@ -17,7 +17,7 @@ $(() => {
         }
 
         $.post('/api/message', { nick, email, content }, data => {
-            console.log(data);
+            location.replace(location.href);
         });
     })
 })
