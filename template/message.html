@@ -5,9 +5,9 @@
             <a class="message-item-author" href="mailto:<%=message.email%>">
                 <%=message.nick%>
             </a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="time"><%=message.createTime%></span>
-            <p>
-                <%=message.content%>
-            </p>
+            <div class="message-item-content markdown-body">
+                <%-message.content%>
+            </div>
         </div>
         <% }) %>
             <div class="message-leave">

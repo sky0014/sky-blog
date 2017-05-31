@@ -134,6 +134,10 @@ a:hover {
     font-weight: bold;
 }
 
+.message-item-content {
+    margin-top: 20px;
+}
+
 .message-leave-title {
     font-size: 32px;
 }
